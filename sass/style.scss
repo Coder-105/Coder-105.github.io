@@ -1,0 +1,721 @@
+
+$color-primary: #2c3e50;
+$color-green: #27ae60;
+$color-green-hover: #229954;
+$color-dark: #1a1a1a;
+$color-gray: #666;
+$color-light-gray: #f5f5f5;
+$color-white: #ffffff;
+$color-border: #e0e0e0;
+
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$container-width: 1200px;
+$spacing: 8px;
+
+@mixin container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $spacing * 3;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-primary;
+}
+
+.container {
+    @include container;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing;
+    padding: $spacing * 1.5 $spacing * 3;
+    border: none;
+    border-radius: $spacing;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+
+    &--green {
+        background-color: $color-green;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-green-hover;
+        }
+    }
+
+    &--dark {
+        background-color: $color-dark;
+        color: $color-white;
+
+        &:hover {
+            background-color: lighten($color-dark, 10%);
+        }
+    }
+}
+
+.header {
+    background-color: $color-white;
+    padding: $spacing * 2 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    &__container {
+        @include flex-between;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: $spacing * 2;
+    }
+
+    &__logo-icon {
+        font-size: 48px;
+    }
+
+    &__logo-text {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    &__nav {
+        display: flex;
+        gap: $spacing * 4;
+    }
+
+    &__link {
+        color: $color-primary;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $color-green;
+        }
+    }
+
+    &__btn {
+        margin-left: $spacing * 2;
+    }
+
+    &__burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+
+        span {
+            width: 25px;
+            height: 3px;
+            background-color: $color-primary;
+            transition: all 0.3s;
+        }
+
+        &.active {
+            span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
+
+.hero {
+    padding: $spacing * 8 0;
+    background-color: $color-light-gray;
+
+    &__container {
+        @include flex-between;
+        gap: $spacing * 6;
+    }
+
+    &__content {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: $spacing * 3;
+        color: $color-primary;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        color: $color-gray;
+        margin-bottom: $spacing * 4;
+        line-height: 1.6;
+    }
+
+    &__image {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    &__placeholder {
+        width: 100%;
+        height: 400px;
+        background-color: darken($color-light-gray, 5%);
+        border-radius: $spacing * 2;
+        @include flex-center;
+        font-size: 18px;
+        color: $color-gray;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: $spacing * 4;
+    color: $color-primary;
+
+    &--light {
+        color: $color-white;
+    }
+}
+
+.about {
+    padding: $spacing * 8 0;
+
+    &__text {
+        max-width: 800px;
+        margin: 0 auto $spacing * 6;
+        text-align: center;
+        color: $color-gray;
+        line-height: 1.8;
+    }
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing * 3;
+}
+
+.feature-card {
+    text-align: center;
+    padding: $spacing * 3;
+
+    &__number {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $color-light-gray;
+        color: $color-green;
+        font-size: 24px;
+        font-weight: 700;
+        @include flex-center;
+        margin: 0 auto $spacing * 2;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: $spacing * 2;
+        color: $color-primary;
+    }
+
+    &__text {
+        font-size: 14px;
+        color: $color-gray;
+        line-height: 1.6;
+    }
+}
+
+.about-image {
+    padding: $spacing * 8 0;
+    background-color: $color-light-gray;
+
+    &__container {
+        @include flex-between;
+        gap: $spacing * 6;
+        align-items: center;
+    }
+
+    &__content {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    &__title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: $spacing * 3;
+        color: $color-primary;
+    }
+
+    &__text {
+        font-size: 16px;
+        color: $color-gray;
+        line-height: 1.8;
+        margin-bottom: $spacing * 4;
+    }
+
+    &__block {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    &__placeholder {
+        width: 100%;
+        height: 400px;
+        background-color: darken($color-light-gray, 5%);
+        border-radius: $spacing * 2;
+        @include flex-center;
+        font-size: 18px;
+        color: $color-gray;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.teachers {
+    padding: $spacing * 8 0;
+    background-color: white;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing * 4;
+    }
+}
+
+.teacher-card {
+    text-align: center;
+    padding: $spacing * 3;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: $spacing * 2;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__photo {
+        font-size: 80px;
+        margin-bottom: $spacing * 3;
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: $spacing;
+        color: black;
+    }
+
+    &__position {
+        font-size: 14px;
+        color: black;
+        line-height: 1.5;
+    }
+}
+
+.benefits {
+    padding: $spacing * 8 0;
+
+    &__container {
+        @include flex-between;
+        gap: $spacing * 6;
+        align-items: center;
+    }
+
+    &__image {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    &__placeholder {
+        width: 100%;
+        height: 400px;
+        background-color: $color-light-gray;
+        border-radius: $spacing * 2;
+        @include flex-center;
+        font-size: 18px;
+        color: $color-gray;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &__content {
+        flex: 1;
+        max-width: 600px;
+    }
+}
+
+.benefit-item {
+    margin-bottom: $spacing * 4;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: $spacing * 1.5;
+        color: $color-primary;
+    }
+
+    &__text {
+        font-size: 14px;
+        color: $color-gray;
+        line-height: 1.6;
+    }
+}
+
+.footer {
+    background-color: $color-dark;
+    color: $color-white;
+    padding: $spacing * 6 0;
+
+    &__container {
+        @include flex-between;
+        gap: $spacing * 4;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: $spacing * 2;
+    }
+
+    &__logo-icon {
+        font-size: 48px;
+    }
+
+    &__logo-text {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    &__socials {
+        display: flex;
+        gap: $spacing * 2;
+    }
+
+    &__social {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        @include flex-center;
+        transition: background-color 0.3s;
+        font-size: 20px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $color-green;
+        }
+    }
+
+    &__subscribe {
+        flex: 1;
+        max-width: 400px;
+    }
+
+    &__subscribe-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: $spacing;
+    }
+
+    &__subscribe-text {
+        font-size: 14px;
+        color: lighten($color-gray, 20%);
+        margin-bottom: $spacing * 2;
+    }
+
+    &__form {
+        display: flex;
+        gap: $spacing;
+    }
+
+    &__input {
+        flex: 1;
+        padding: $spacing * 1.5;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: $spacing;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: $color-white;
+        font-size: 14px;
+
+        &::placeholder {
+            color: lighten($color-gray, 20%);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $color-green;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .teachers__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero__title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+    }
+    .header__burger {
+        display: flex;
+    }
+
+    .header__nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $color-white;
+        flex-direction: column;
+        padding: $spacing * 3;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    .header__btn {
+        display: none;
+    }
+
+    .header__logo-text {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: $spacing * 4 0;
+    }
+
+    .hero__container {
+        flex-direction: column;
+    }
+
+    .hero__content {
+        max-width: 100%;
+    }
+
+    .hero__title {
+        font-size: 32px;
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+    }
+
+    .hero__image {
+        max-width: 100%;
+    }
+
+    .hero__placeholder {
+        height: 300px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .about {
+        padding: $spacing * 4 0;
+    }
+
+    .about__text {
+        font-size: 14px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: $spacing * 2;
+    }
+
+    .feature-card {
+        padding: $spacing * 2;
+    }
+
+    .about-image {
+        padding: $spacing * 4 0;
+    }
+
+    .about-image__container {
+        flex-direction: column;
+    }
+
+    .about-image__content {
+        max-width: 100%;
+    }
+
+    .about-image__title {
+        font-size: 28px;
+    }
+
+    .about-image__text {
+        font-size: 14px;
+    }
+
+    .about-image__block {
+        max-width: 100%;
+    }
+
+    .about-image__placeholder {
+        height: 300px;
+    }
+
+    .teachers {
+        padding: $spacing * 4 0;
+    }
+
+    .teachers__grid {
+        grid-template-columns: 1fr;
+        gap: $spacing * 3;
+    }
+
+    .teacher-card {
+        padding: $spacing * 2;
+    }
+
+    .teacher-card__photo {
+        font-size: 60px;
+    }
+
+    .benefits {
+        padding: $spacing * 4 0;
+    }
+
+    .benefits__container {
+        flex-direction: column;
+    }
+
+    .benefits__image {
+        max-width: 100%;
+    }
+
+    .benefits__placeholder {
+        height: 300px;
+    }
+
+    .benefits__content {
+        max-width: 100%;
+    }
+
+    .benefit-item__title {
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: $spacing * 4 0;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__logo {
+        justify-content: center;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
+
+    .footer__subscribe {
+        max-width: 100%;
+    }
+
+    .footer__form {
+        flex-direction: column;
+    }
+
+    .footer__input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .about-image__title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: $spacing * 1.2 $spacing * 2;
+        font-size: 14px;
+    }
+
+    .feature-card__number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .feature-card__title {
+        font-size: 18px;
+    }
+}
