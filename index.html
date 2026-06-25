@@ -10,7 +10,7 @@
     <header class="header">
         <div class="container header__container">
             <div class="header__logo">
-                <div class="header__logo-icon"><img src="/src/img/Logo.png" alt=""></div>
+                <div class="header__logo-icon"><img src="/img/Logo.png" alt=""></div>
             </div>
             
             <button class="header__burger" id="burger">
@@ -39,7 +39,7 @@
                 <a href="#" class="btn btn--green">Консультация →</a>
             </div>
             <div class="hero__image">
-                <div class="hero__placeholder"><img src="/src/img/088A1610 1.png" alt=""></div>
+                <div class="hero__placeholder"><img src="/img/088A1610 1.png" alt=""></div>
             </div>
         </div>
     </section>
@@ -89,7 +89,7 @@
                 <a href="#" class="btn btn--green">Оставить контакт →</a>
             </div>
             <div class="about-image__block">
-                <div class="about-image__placeholder"><img src="/src/img/gymnazy 1.png" alt=""></div>
+                <div class="about-image__placeholder"><img src="/img/gymnazy 1.png" alt=""></div>
             </div>
         </div>
     </section>
@@ -99,17 +99,17 @@
             <h2 class="section-title section-title--light">Преподаватели</h2>
             <div class="teachers__grid">
                 <div class="teacher-card">
-                    <div class="teacher-card__photo"><img src="/src/img/NZ5_2281_redakt-kopiya 1.png" alt="" srcset=""></div>
+                    <div class="teacher-card__photo"><img src="/img/NZ5_2281_redakt-kopiya 1.png" alt="" srcset=""></div>
                     <h3 class="teacher-card__name">Лебедев Алексей Владимирович</h3>
                     <p class="teacher-card__position">Заместитель директора по научно-методической работе, учитель математики</p>
                 </div>
                 <div class="teacher-card">
-                    <div class="teacher-card__photo"><img src="/src/img/NZ5_2303_redakt-kopiya 1.png" alt="" srcset=""></div>
+                    <div class="teacher-card__photo"><img src="/img/NZ5_2303_redakt-kopiya 1.png" alt="" srcset=""></div>
                     <h3 class="teacher-card__name">Стрельцов Александр Сергеевич</h3>
                     <p class="teacher-card__position">Заместитель директора по воспитательной работе, учитель русского языка</p>
                 </div>
                 <div class="teacher-card">
-                    <div class="teacher-card__photo"><img src="/src/img/NZ5_2338_redakt-kopiya 1.png" alt="" srcset=""></div>
+                    <div class="teacher-card__photo"><img src="/img/NZ5_2338_redakt-kopiya 1.png" alt="" srcset=""></div>
                     <h3 class="teacher-card__name">Русаков Ростислав Игоревич</h3>
                     <p class="teacher-card__position">Заместитель директора по воспитательной работе, учитель химии</p>
                 </div>
@@ -120,7 +120,7 @@
     <section class="benefits">
         <div class="container benefits__container">
             <div class="benefits__image">
-                <div class="benefits__placeholder"><img src="/src/img/photo_5273962730320760957_y (1) 1.png" alt=""></div>
+                <div class="benefits__placeholder"><img src="/img/photo_5273962730320760957_y (1) 1.png" alt=""></div>
             </div>
             <div class="benefits__content">
                 <div class="benefit-item">
@@ -142,7 +142,7 @@
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__logo">
-                <div class="footer__logo-icon"><img src="/src/img/Logo.png" alt=""></div>
+                <div class="footer__logo-icon"><img src="/img/Logo.png" alt=""></div>
             </div>
             <div class="footer__subscribe">
                 <h3 class="footer__subscribe-title">Заголовок в 1 строчку</h3>
